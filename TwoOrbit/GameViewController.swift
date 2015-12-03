@@ -10,9 +10,9 @@ import UIKit
 import SpriteKit
 import GameKit
 
-class GameViewController: UIViewController, GameSceneDelegate, GKGameCenterControllerDelegate {
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     var skView: SKView!
-    var menuscene: MenuScene!
+    var menuscene: MenuSceneNode!
     var gamescene: GameScene!
     
     var score = 0
@@ -27,7 +27,6 @@ class GameViewController: UIViewController, GameSceneDelegate, GKGameCenterContr
         
         gamescene = GameScene(size: skView.bounds.size)
         gamescene.scaleMode = .AspectFill
-        gamescene.sceneDelegate = self
         
         NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "highscore")
         NSUserDefaults.standardUserDefaults().synchronize()
@@ -39,7 +38,7 @@ class GameViewController: UIViewController, GameSceneDelegate, GKGameCenterContr
             if let vc = viewController {
                 self.presentViewController(vc, animated: true, completion: nil)
             } else {
-                print(GKLocalPlayer.localPlayer().authenticated)
+                //print(GKLocalPlayer.localPlayer().authenticated)
             }
         }
     }
