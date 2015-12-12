@@ -1,4 +1,3 @@
 # TwoOrbit
 
-Personal project
-Simple one-tap timing game
+Personal project. Simple one-tap timing game
